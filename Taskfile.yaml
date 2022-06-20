@@ -1,0 +1,28 @@
+version: '3'
+
+vars:
+  BUILD_DIR: build
+
+tasks:
+  check:
+    cmds:
+      - task: lint
+      - task: test
+
+  lint:
+    cmds:
+      - golangci-lint run --timeout 10m $LINT_ARGS
+
+  fmt:
+    cmds:
+      - golangci-lint run --fix
+
+  test:
+    cmds:
+      - cmd: mkdir -p {{.BUILD_DIR}}
+        silent: true
+      - gotestsum --no-summary=skipped --junitfile {{.BUILD_DIR}}/coverage.xml --jsonfile {{.BUILD_DIR}}/test.json --format {{.TEST_FORMAT}} -- -race -coverprofile={{.BUILD_DIR}}/coverage.txt -covermode=atomic ./...
+    vars:
+      TEST_FORMAT: short
+    env:
+      CGO_ENABLED: 1
