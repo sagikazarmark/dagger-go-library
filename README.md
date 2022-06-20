@@ -7,6 +7,18 @@
 This repository serves as an example for using [Dagger](https://dagger.io/) as a CI solution for a Go library.
 
 
+## Setup
+
+[Install Dagger](https://docs.dagger.io/install) (at least version 0.2.19).
+
+Run tests and lint:
+
+```shell
+dagger do test
+dagger do lint
+```
+
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
