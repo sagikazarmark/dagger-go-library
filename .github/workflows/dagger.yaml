@@ -37,7 +37,7 @@ jobs:
         with:
           cmds: |
             project update
-            do test go ${{ matrix.go }}
+            do check test go ${{ matrix.go }}
 
   lint:
     name: Lint
@@ -66,4 +66,4 @@ jobs:
         with:
           cmds: |
             project update
-            do lint
+            do check lint
