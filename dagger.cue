@@ -4,6 +4,8 @@ import (
 	"dagger.io/dagger"
 
 	"universe.dagger.io/go"
+
+	"github.com/sagikazarmark/dagger-go-library/ci/go/golangci"
 )
 
 dagger.#Plan & {
@@ -42,6 +44,12 @@ dagger.#Plan & {
 						export: files: "/coverage.out": _
 					}
 				}
+			}
+		}
+		lint: {
+			"go": golangci.#Lint & {
+				source:  _source
+				version: "1.46"
 			}
 		}
 	}
