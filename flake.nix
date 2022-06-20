@@ -25,7 +25,7 @@
       in
       {
         devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [ git go_1_18 golangci-lint gotestsum go-task ];
+          buildInputs = with pkgs; [ git go_1_18 golangci-lint gotestsum go-task dagger ];
         };
       });
 }
