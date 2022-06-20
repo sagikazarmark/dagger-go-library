@@ -24,3 +24,18 @@ jobs:
           cmds: |
             project update
             do test go ${{ matrix.go }}
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Dagger
+        uses: dagger/dagger-for-github@v3
+        with:
+          cmds: |
+            project update
+            do lint
