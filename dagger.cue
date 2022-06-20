@@ -110,6 +110,7 @@ dagger.#Plan & {
 			"go": golangci.#Lint & {
 				source:  _source
 				version: "1.46"
+				always:  true
 			}
 		}
 	}
