@@ -6,16 +6,16 @@
 
 This repository serves as an example for using [Dagger](https://dagger.io/) as a CI solution for a Go library.
 
+It's also the model repository for my [Building a CI pipeline for a Go library with Dagger](https://sagikazarmark.hu/blog/dagger-go-library/) post (available on [dev.to](https://dev.to/sagikazarmark/building-a-ci-pipeline-for-a-go-library-with-dagger-2an7) as well).
 
 ## Setup
 
 [Install Dagger](https://docs.dagger.io/install) (at least version 0.2.19).
 
-Run tests and lint:
+Run tests and linters:
 
 ```shell
-dagger do test
-dagger do lint
+dagger do check
 ```
 
 
