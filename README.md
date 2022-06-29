@@ -8,6 +8,7 @@ This repository serves as an example for using [Dagger](https://dagger.io/) as a
 
 It's also the model repository for my [Building a CI pipeline for a Go library with Dagger](https://sagikazarmark.hu/blog/dagger-go-library/) post (available on [dev.to](https://dev.to/sagikazarmark/building-a-ci-pipeline-for-a-go-library-with-dagger-2an7) as well).
 
+
 ## Setup
 
 [Install Dagger](https://docs.dagger.io/install) (at least version 0.2.19).
@@ -21,4 +22,4 @@ dagger do check
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE) for more information.
+The project is licensed under the [MIT License](LICENSE).
