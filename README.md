@@ -1,5 +1,7 @@
 # Go library example for [Dagger](https://dagger.io/)
 
+> **⚠️ Warning! This branch uses the [CUE SDK](https://docs.dagger.io/sdk/cue). Check out the main branch for a more up-to-date version using the [Go SDK](https://docs.dagger.io/sdk/go).**
+
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/sagikazarmark/dagger-go-library/CI?style=flat-square)](https://github.com/sagikazarmark/dagger-go-library/actions?query=workflow%3ACI)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/sagikazarmark/dagger-go-library/Dagger?style=flat-square)](https://github.com/sagikazarmark/dagger-go-library/actions?query=workflow%3ADagger)
 [![Codecov](https://img.shields.io/codecov/c/github/sagikazarmark/dagger-go-library?style=flat-square)](https://codecov.io/gh/sagikazarmark/dagger-go-library)
