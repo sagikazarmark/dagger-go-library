@@ -1,3 +1,3 @@
 module github.com/sagikazarmark/dagger-go-library
 
-go 1.18
+go 1.19
