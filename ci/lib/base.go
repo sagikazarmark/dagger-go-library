@@ -3,6 +3,7 @@ package lib
 import (
 	"crypto/sha256"
 	"fmt"
+	"os"
 
 	"dagger.io/dagger"
 	"github.com/sagikazarmark/go-option"
@@ -90,7 +91,8 @@ func base(client *dagger.Client, options baseOptions) *dagger.Container {
 		WithMountedCache("/root/.cache/go-build", client.CacheVolume(fmt.Sprintf("go-build-%x", imageHash))).
 		WithMountedCache("/go/pkg/mod", client.CacheVolume(fmt.Sprintf("go-mod-%x", imageHash))).
 		WithMountedDirectory("/src", client.Host().Directory(projectRoot)).
-		WithWorkdir("/src")
+		WithWorkdir("/src").
+		WithEnvVariable("CI", os.Getenv("CI"))
 
 	if options.HasCgoValue() {
 		container = container.WithEnvVariable("CGO_ENABLED", options.CgoValue())

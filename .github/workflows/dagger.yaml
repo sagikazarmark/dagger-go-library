@@ -32,6 +32,12 @@ jobs:
           DEBUG: "true"
           GO_VERSION: ${{ matrix.go }}
 
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        if: always()
+        with:
+          files: coverage.txt
+
   lint:
     name: Lint
     runs-on: ubuntu-latest

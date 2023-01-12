@@ -28,13 +28,25 @@ func Test(ctx context.Context) error {
 	}
 	defer client.Close()
 
-	var opts []lib.TestOption
+	opts := []lib.TestOption{lib.EnableCoverage()}
 
 	if goVersion := os.Getenv("GO_VERSION"); goVersion != "" {
 		opts = append(opts, lib.GoVersion(goVersion))
 	}
 
-	return process(ctx, lib.Test(client, opts...))
+	c := lib.Test(client, opts...)
+
+	err = process(ctx, c)
+	if err != nil {
+		return err
+	}
+
+	_, err = c.File("/src/coverage.txt").Export(ctx, "coverage.txt")
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 // Run linter
